@@ -96,14 +96,14 @@ try:
   
   while True:
     if not GPIO.input(BUTTON_GPIO):
-      with open("../configuration.json", 'r') as f:
+      with open("configuration.json", 'r') as f:
         minmax = load(f)
       dice = randint(minmax["min"], minmax["max"])
       
-      with open("../dice_history.txt", 'a') as f:
+      with open("dice_history.txt", 'a') as f:
         f.write(f"{strftime('%Y/%m/%d')} {strftime('%H:%M:%S')} {dice}\n")
         
-      with open("display_text.txt", 'r') as f:
+      with open("./iot-hw2-lcd-dice/display_text.txt", 'r') as f:
         text = f.readline().strip()
         
       lcd.write(0, 0, text)
