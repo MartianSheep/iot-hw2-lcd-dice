@@ -26,7 +26,7 @@ class LCD1602:
       data |= 0x08
     else:
       data &= 0xF7
-    self.BUS.write_byte(self.addresss, data)
+    self.BUS.write_byte(self.address, data)
     
   def send_cmd(self, cmd):
     buf = cmd & 0xF0
