@@ -93,6 +93,7 @@ try:
   lcd.write(0, 1, "LCD Dice")
   sleep(3)
   lcd.clear()
+  lcd.write(0, 0, "Press button...")
   
   while True:
     if not GPIO.input(BUTTON_GPIO):
@@ -106,6 +107,7 @@ try:
       with open("./iot-hw2-lcd-dice/display_text.txt", 'r') as f:
         text = f.readline().strip()
         
+      lcd.clear()
       lcd.write(0, 0, text)
       lcd.write(0, 1, f"[{minmax['min']}, {minmax['max']}]: {dice}")
       sleep(1)
