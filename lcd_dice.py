@@ -93,7 +93,8 @@ try:
   lcd.write(0, 1, "LCD Dice")
   sleep(3)
   lcd.clear()
-  lcd.write(0, 0, "Press button...")
+  lcd.write(0, 0, "Press button")
+  lcd.write(0, 1, "to continue...")
   
   while True:
     if not GPIO.input(BUTTON_GPIO):
